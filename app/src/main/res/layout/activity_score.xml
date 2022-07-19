@@ -8,18 +8,18 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SCORE:"
+        android:text="@string/scoreTxt"
         android:textAlignment="center"
         android:textColor="#009688"
         android:textSize="50sp" />
 
     <TextView
         android:id="@+id/scoreNumberTV"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="no score"
+        android:text="@string/no_scoreTxt"
         android:textAlignment="center"
         android:textColor="#FF5722"
         android:textSize="40sp" />
@@ -30,7 +30,14 @@
             android:id="@+id/showPuppy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/husky"
+
            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailButton"
+            android:text="@string/email_scoreTxt"
+            />
 
 </LinearLayout>

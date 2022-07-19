@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">DogMythsQuizApp</string>
+    <string name="question1Text">Dogs only need tick prevention in the summer.</string>
+    <string name="q2Text">Dogs can see a range of colors.</string>
+    <string name="trueText">TRUE</string>
+    <string name="falseTxt">FALSE</string>
+    <string name="q3Text">A dogs mouth is cleaner than a human’s mouth.</string>
+    <string name="q4Text">The common cold does not affect dogs.</string>
+    <string name="q5Text">Some dog breeds are more aggressive than others.</string>
+    <string name="endQText">End of questions, click VIEW SCORE to see your score.</string>
+    <string name="correctTxt">That is correct.</string>
+    <string name="incorrectText">That is incorrect.</string>
+    <string name="next_questionTxt">NEXT QUESTION</string>
+    <string name="view_scoreTxt">VIEW SCORE</string>
+    <string name="scoreTxt">SCORE:</string>
+    <string name="no_scoreTxt">no score</string>
+    <string name="email_scoreTxt">CLICK TO EMAIL YOUR SCORE</string>
+    <string name="subjTxt">New score for Dog Myths</string>
+    <string name="body1Txt">I just got a </string>
+    <string name="body2Txt"> on the Dog Myths quiz.</string>
 </resources>

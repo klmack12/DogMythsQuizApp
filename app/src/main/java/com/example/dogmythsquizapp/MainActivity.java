@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Question q1, q2, q3, q4, q5,  currentQ;
     Question[] questions;
     int currentIndex;
+    ImageView image1, image2, image3, image4, image5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         scoreBtn = (Button) findViewById(R.id.scoreButton);
         nextBtn = (Button) findViewById(R.id.nextButton);
         score = 0;
-        q1 = new Question("Dogs only need tick prevention in the summer.", false);
-        q2 = new Question("Dogs can see a range of colors.", true);
-        q3 = new Question("A dogs mouth is cleaner than a human’s mouth.", false);
-        q4 = new Question("The common cold does not affect dogs.", true);
-        q5 = new Question("Some dog breeds are more aggressive than others.", false);
+        q1 = new Question(getString(R.string.question1Text), false);
+        q2 = new Question(getString(R.string.q2Text), true);
+        q3 = new Question(getString(R.string.q3Text), false);
+        q4 = new Question(getString(R.string.q4Text), true);
+        q5 = new Question(getString(R.string.q5Text), false);
         questions = new Question[] {q1, q2, q3, q4, q5};
         currentIndex = 0;
         currentQ = questions[currentIndex];
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 currentIndex++;
                 if (currentIndex >= questions.length) {
-                    message = "End of questions, click VIEW SCORE to see your score.";
+                    message = getString(R.string.endQText);
                     Context context = getApplicationContext();
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, message, duration);
@@ -59,8 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 else {
 
                     currentQ = questions[currentIndex];
-                    String currentQText = currentQ.getQText();
+                    String currentQText = currentQ.getQText();  //change the question if not the last one.
                     qTextTV.setText(currentQText);
+                    image1 = (ImageView) findViewById(R.id.showNextPuppy);
+          //     qTextTV.setText(questions[currentIndex].toString()); This would show what is in the current position of the array
                 }
 
             }
@@ -72,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         if (currentQ.getCorrectAnswer())
                         {
-                            message = "That is correct.";
+                            message = getString(R.string.correctTxt);
                             score++;
                         }
                         else
                         {
-                            message = "That is incorrect.";
+                            message = getString(R.string.incorrectText);
                         }
 
                         Context context = getApplicationContext();
@@ -92,12 +96,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!currentQ.getCorrectAnswer())
                 {
-                    message = "That is correct.";
+                    message = getString(R.string.correctTxt);
                     score++;
                 }
                 else
                 {
-                    message = "That is incorrect.";
+                    message = getString(R.string.incorrectText);
                 }
 
                 Context context = getApplicationContext();

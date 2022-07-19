@@ -10,7 +10,7 @@
         android:id="@+id/questionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dogs only need tick prevention in the summer."
+        android:text="@string/question1Text"
 
         android:textAlignment="center"
         android:textColor="#9C27B0"
@@ -28,7 +28,7 @@
             android:id="@+id/trueButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="TRUE"
+            android:text="@string/trueText"
             android:textSize="24sp" />
 
         <Button
@@ -36,35 +36,44 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10sp"
-            android:text="FALSE"
+            android:text="@string/falseTxt"
             android:textSize="24sp"
 
             />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/nextButton"
-        style="@style/Widget.AppCompat.Button"
+    <ImageView
+        android:id="@+id/showNextPuppy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
+
+
+        />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
         android:layout_marginTop="100sp"
+        android:backgroundTint="#9C27B0"
         android:fontFamily="sans-serif-black"
-        android:text="NEXT QUESTION"
+        android:text="@string/next_questionTxt"
         android:textSize="24sp"
         android:typeface="monospace" />
 
 
     <Button
         android:id="@+id/scoreButton"
-        style="@style/Widget.AppCompat.Button"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10sp"
         android:layout_marginTop="100sp"
+        android:backgroundTint="@color/black"
         android:fontFamily="sans-serif-black"
-        android:text="VIEW SCORE"
+        android:text="@string/view_scoreTxt"
         android:textSize="24sp"
         android:textStyle="italic"
         android:typeface="monospace" />
