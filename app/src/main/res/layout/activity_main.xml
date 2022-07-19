@@ -44,6 +44,19 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/nextButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="100sp"
+        android:fontFamily="sans-serif-black"
+        android:text="NEXT QUESTION"
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
+
+    <Button
         android:id="@+id/scoreButton"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
@@ -55,4 +68,5 @@
         android:textSize="24sp"
         android:textStyle="italic"
         android:typeface="monospace" />
+
 </LinearLayout>

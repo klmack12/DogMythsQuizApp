@@ -24,6 +24,6 @@ public class ScoreActivity extends AppCompatActivity {
         //get Intent and then extra and then show the extra variable from the other screen
         Intent incomingIntent = getIntent();
         int score = incomingIntent.getIntExtra("scoreName", 0);
-        scoreNumberTV.setText(" " + score);  // make the int a string, because this is necessary
+        scoreNumberTV.setText("" + score);  // make the int a string, because this is necessary
     }
 }
