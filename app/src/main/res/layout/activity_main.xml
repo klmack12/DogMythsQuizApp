@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_y="20dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dogs only need tick prevention in the summer."
+
+        android:textAlignment="center"
+        android:textColor="#9C27B0"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="40sp">
+
+        <Button
+            android:id="@+id/trueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="TRUE"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/falseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10sp"
+            android:text="FALSE"
+            android:textSize="24sp"
+
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/scoreButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="100sp"
+        android:fontFamily="sans-serif-black"
+        android:text="VIEW SCORE"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:typeface="monospace" />
+</LinearLayout>

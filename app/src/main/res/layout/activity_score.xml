@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#96B3B0"
+    android:backgroundTint="#D3EAE8"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SCORE:"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/scoreNumberTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="no score"
+        android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="40sp" />
+
+
+
+        <ImageView
+            android:id="@+id/showPuppy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/husky"
+           />
+
+</LinearLayout>
