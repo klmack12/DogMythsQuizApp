@@ -22,6 +22,8 @@ public class ScoreActivity extends AppCompatActivity {
     Button emailBtn, sendButton, retrieveButton;
     FirebaseDatabase database;
     DatabaseReference myRef;
+    DatabaseReference mDatabase;
+    String key;
     int score;
     String name;
     @Override
@@ -31,8 +33,11 @@ public class ScoreActivity extends AppCompatActivity {
 
      //   image = (ImageView) findViewById(R.id.showPuppy);  show one image
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("message");
+
+
+
+        //database = FirebaseDatabase.getInstance();
+        //myRef = database.getReference("message");
         myEditText = (EditText) findViewById(R.id.typeName);
 
 
@@ -64,10 +69,15 @@ public class ScoreActivity extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                mDatabase = FirebaseDatabase.getInstance().getReference("scores");
+                key = mDatabase.push().getKey();
                 // Write a message to the database
 
                 name = myEditText.getText().toString();
-                myRef.setValue(score);
+                //myRef.setValue(score);
+                Scores newScore = new Scores(name, score);
+                mDatabase.child(key).setValue(newScore);
                 highScoresTV.setText(name + " your score of " + score + " was sent to database.");
             }
         });
