@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_y="20dp"
     android:gravity="center"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/questionText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/question1Text"
 
@@ -22,19 +21,19 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="40sp">
+        >
 
         <Button
             android:id="@+id/trueButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/trueText"
             android:textSize="24sp" />
 
         <Button
             android:id="@+id/falseButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
             android:text="@string/falseTxt"
             android:textSize="24sp"
@@ -43,34 +42,30 @@
 
     </LinearLayout>
 
+
     <ImageView
         android:id="@+id/showNextPuppy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/akira" />
 
-
-        />
 
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5sp"
-        android:layout_marginTop="100sp"
         android:backgroundTint="#9C27B0"
         android:fontFamily="sans-serif-black"
         android:text="@string/next_questionTxt"
         android:textSize="24sp"
         android:typeface="monospace" />
 
-
     <Button
         android:id="@+id/scoreButton"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10sp"
-        android:layout_marginTop="100sp"
         android:backgroundTint="@color/black"
         android:fontFamily="sans-serif-black"
         android:text="@string/view_scoreTxt"

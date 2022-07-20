@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="#96B3B0"
     android:backgroundTint="#D3EAE8"
+    android:gravity="center"
     android:orientation="vertical">
 
 
@@ -11,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scoreTxt"
-        android:textAlignment="center"
         android:textColor="#009688"
+        android:gravity="center"
         android:textSize="50sp" />
+
 
     <TextView
         android:id="@+id/scoreNumberTV"
@@ -22,11 +24,8 @@
         android:text="@string/no_scoreTxt"
         android:textAlignment="center"
         android:textColor="#FF5722"
+        android:gravity="center"
         android:textSize="40sp" />
-
-
-
-
 
         <Button
             android:layout_width="wrap_content"
@@ -35,11 +34,11 @@
             android:text="@string/email_scoreTxt"
             />
 
-    <ImageView
-        android:id="@+id/showPuppy"
-        android:layout_width="200dp"
-        android:layout_height="300dp"
-
-        android:src="@drawable/akira" />
+        <ImageView
+             android:id="@+id/showPuppy"
+             android:layout_width="200dp"
+             android:layout_height="300dp"
+             android:layout_gravity="center"
+             android:src="@drawable/akira" />
 
 </LinearLayout>

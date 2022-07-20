@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Question q1, q2, q3, q4, q5,  currentQ;
     Question[] questions;
     int currentIndex;
-    ImageView image1, image2, image3, image4, image5;
-
+    ImageView image;
+    int image1, image2, image3, image4, image5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +36,16 @@ public class MainActivity extends AppCompatActivity {
         scoreBtn = (Button) findViewById(R.id.scoreButton);
         nextBtn = (Button) findViewById(R.id.nextButton);
         score = 0;
-        q1 = new Question(getString(R.string.question1Text), false);
-        q2 = new Question(getString(R.string.q2Text), true);
-        q3 = new Question(getString(R.string.q3Text), false);
-        q4 = new Question(getString(R.string.q4Text), true);
-        q5 = new Question(getString(R.string.q5Text), false);
+        image1 = R.drawable.akirapuppy;  //each picture referenced by a number
+        image2 = R.drawable.akiranow;
+        image3 = R.drawable.calliepuppy;
+        image4 = R.drawable.callienow;
+        image5 = R.drawable.amberandcallie;
+        q1 = new Question(getString(R.string.question1Text), false, image1);
+        q2 = new Question(getString(R.string.q2Text), true, image2);
+        q3 = new Question(getString(R.string.q3Text), false, image3);
+        q4 = new Question(getString(R.string.q4Text), true, image4);
+        q5 = new Question(getString(R.string.q5Text), false, image5);
         questions = new Question[] {q1, q2, q3, q4, q5};
         currentIndex = 0;
         currentQ = questions[currentIndex];
@@ -51,20 +56,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 currentIndex++;
-                if (currentIndex >= questions.length) {
+                if (currentIndex >= questions.length) {  //if end of questions, show msg to show score
                     message = getString(R.string.endQText);
+                    //all text user sees have been moved to strings.xml for language translations
+                    //using extract string resource
                     Context context = getApplicationContext();
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, message, duration);
                     toast.show();  //pop-up message
                 }
-                else {
+                else {  //change the question if not the last one.
 
                     currentQ = questions[currentIndex];
-                    String currentQText = currentQ.getQText();  //change the question if not the last one.
+                    String currentQText = currentQ.getQText();
                     qTextTV.setText(currentQText);
-                    image1 = (ImageView) findViewById(R.id.showNextPuppy);
-          //     qTextTV.setText(questions[currentIndex].toString()); This would show what is in the current position of the array
+                    image = (ImageView) findViewById(R.id.showNextPuppy);  //say where image will be displayed
+                    image.setImageResource(currentQ.getPicture());  //change to next image in the array of questions
+                    // qTextTV.setText(questions[currentIndex].toString()); This would show what is in the current position of the array
+              // as defined in the question class
                 }
 
             }
