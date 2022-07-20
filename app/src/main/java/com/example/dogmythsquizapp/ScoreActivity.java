@@ -12,9 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ScoreActivity extends AppCompatActivity {
-    TextView  scoreNumberTV;
+    TextView  scoreNumberTV, highScoresTV;
     ImageView image;
-    Button emailBtn;
+    Button emailBtn, sendButton, retrieveButton;
     int score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,12 @@ public class ScoreActivity extends AppCompatActivity {
         Intent incomingIntent = getIntent();
         score = incomingIntent.getIntExtra("scoreName", 0);
         scoreNumberTV.setText(" " + score);  // make the int a string, because this is necessary
+
+        //textview for high scores
+        highScoresTV = (TextView) findViewById(R.id.highScoresTV);
+
+        sendButton = (Button) findViewById(R.id.sendButton);
+        retrieveButton = (Button) findViewById(R.id.retrieveButton);
 
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override

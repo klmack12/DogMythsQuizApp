@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "181590484056",
+    "project_id": "dogmythsquizapp",
+    "storage_bucket": "dogmythsquizapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181590484056:android:b62fbb6466907869e6d62d",
+        "android_client_info": {
+          "package_name": "com.example.dogmythsquizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181590484056-0k38thl5hg6d2746i1ur87ug7ebjc7vc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmAhIQ1CjhCymIc6YscPXrrO0mRNPquo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181590484056-0k38thl5hg6d2746i1ur87ug7ebjc7vc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
