@@ -6,22 +6,36 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ScoreActivity extends AppCompatActivity {
     TextView  scoreNumberTV, highScoresTV;
     ImageView image;
+    EditText myEditText;
     Button emailBtn, sendButton, retrieveButton;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
     int score;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        image = (ImageView) findViewById(R.id.showPuppy);
+     //   image = (ImageView) findViewById(R.id.showPuppy);  show one image
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
+        myEditText = (EditText) findViewById(R.id.typeName);
+
+
 
         //textview for score
         scoreNumberTV = (TextView) findViewById(R.id.scoreNumberTV);
@@ -43,10 +57,20 @@ public class ScoreActivity extends AppCompatActivity {
                 String subj = getString(R.string.subjTxt);
                 String bod = getString(R.string.body1Txt) + " " + score + " " + getString(R.string.body2Txt);
                 composeEmail(subj, bod);
+
             }
         });
 
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Write a message to the database
 
+                name = myEditText.getText().toString();
+                myRef.setValue(score);
+                highScoresTV.setText(name + " your score of " + score + " was sent to database.");
+            }
+        });
     }
 
     public void composeEmail(String subject, String body) {
