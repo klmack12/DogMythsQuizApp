@@ -4,6 +4,10 @@ public class Scores {
         String playerName;
         int playerScore;
 
+        public Scores() {
+                this.playerName = " ";
+                this.playerScore = 0;
+        }
         public Scores(String playerName, int playerScore) {
                 this.playerName = playerName;
                 this.playerScore = playerScore;
