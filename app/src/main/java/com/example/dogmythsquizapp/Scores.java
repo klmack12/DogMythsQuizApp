@@ -4,7 +4,7 @@ public class Scores implements Comparable<Scores> {
         public String playerName;
         public int playerScore;
 
-        public int compareTo(Scores m)
+        public int compareTo(Scores m)  //identifies how to sort by the playerScore
         {
                 return m.playerScore - this.playerScore;
         }

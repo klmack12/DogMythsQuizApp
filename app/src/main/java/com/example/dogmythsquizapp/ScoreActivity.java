@@ -66,7 +66,7 @@ public class ScoreActivity extends AppCompatActivity {
         Intent incomingIntent = getIntent();
         score = incomingIntent.getIntExtra("scoreName", 0);
         scoreNumberTV.setText(" " + score);  // make the int a string, because this is necessary
-        allScores = new ArrayList<Scores>();
+        allScores = new ArrayList<Scores>();  //Initialize arraylist 
         //textview for testing
         highScoresTV = (TextView) findViewById(R.id.highScoresTV);
         sendButton = (Button) findViewById(R.id.sendButton);
@@ -86,23 +86,21 @@ public class ScoreActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 mDatabase = FirebaseDatabase.getInstance().getReference("scores");
-                key = mDatabase.push().getKey();
+                key = mDatabase.push().getKey();  //setup a key in database to place an object
                 // Write a message to the database
 
-                name = myEditText.getText().toString();
-                //myRef.setValue(score);
-                Scores newScore = new Scores(name, score);
-                mDatabase.child(key).setValue(newScore);  //write new values to database
+                name = myEditText.getText().toString();  //pull the name from the textbox
+                //myRef.setValue(score);  - to send one value to a database reference called myRef
+                Scores newScore = new Scores(name, score);  //set the pair object of name and score
+                mDatabase.child(key).setValue(newScore);  //write the pair object to database
                 highScoresTV.setText(name + " your score of " + score + " was sent to database.");
 
                 //Create a new listener that gets all of the Customers in a single call to the database
                 mDatabase.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        //Initialize our customer array
 
-
-                        // Iterate through all the children in the snapshot, this should be
+                        // Iterate through all the children in the snapshot in Firebase, this should be
                         // all the children in the "Scores" object
                         for (DataSnapshot scoresSnapShot : snapshot.getChildren()) {
                             //From our snapshot, get the value of our key/value pair. This value
@@ -114,10 +112,10 @@ public class ScoreActivity extends AppCompatActivity {
                            // highScoresTV.setText(" " + allScores.size());
 
                         }
-                        //sort here
+                        //sort ArrayList here by playerScore - Scores.java adds a Comparable
                         Collections.sort(allScores);
 
-                        //show High Scores
+                        //show High Scores in table
                         if (allScores.size() > 0)
                         {
                             for (int currentIndex = 0; currentIndex <=4; currentIndex++) {
