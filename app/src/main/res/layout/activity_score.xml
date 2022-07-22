@@ -59,7 +59,7 @@
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEE HIGH SCORES"
+        android:text="SAVE AND SEE HIGH SCORES"
          />
 
 
