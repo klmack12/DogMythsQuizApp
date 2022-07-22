@@ -59,36 +59,37 @@
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEND TO FB"
+        android:text="SEE HIGH SCORES"
          />
 
-    <Button
-        android:id="@+id/retrieveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RETRIEVE FROM FB"
-        />
 
     <TableLayout
         android:id="@+id/highScores"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/col1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="50sp"
+            android:text="Name" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/col2"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Score" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+       </TableRow>
+
     </TableLayout>
 
 </LinearLayout>

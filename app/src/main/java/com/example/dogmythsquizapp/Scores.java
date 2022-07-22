@@ -1,8 +1,13 @@
 package com.example.dogmythsquizapp;
 
-public class Scores {
-        String playerName;
-        int playerScore;
+public class Scores implements Comparable<Scores> {
+        public String playerName;
+        public int playerScore;
+
+        public int compareTo(Scores m)
+        {
+                return m.playerScore - this.playerScore;
+        }
 
         public Scores() {
                 this.playerName = " ";
@@ -28,5 +33,7 @@ public class Scores {
         public void setPlayerScore(int playerScore) {
                 this.playerScore = playerScore;
         }
+
+
 }
 
